@@ -35,8 +35,8 @@ Each material entry contains extensive physical, mechanical, electrical, and the
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/tommo395/material-database.git
-   cd material-database
+   git clone https://github.com/thomasjbell/equalab-materials.git
+   cd equalab-materials
    ```
 
 2. Install dependencies:
@@ -84,5 +84,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 🙏 Acknowledgments
 
 - Thomas Bell for the original concept and materials science expertise
+- tommo395 for initial development
 - All contributors who help expand the materials database
 - The materials science community for feedback and support
