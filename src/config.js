@@ -2,14 +2,14 @@
 const config = {
     // GitHub repository information
     github: {
-      username: "tommo395",
-      repoName: "material-database",
-      url: "https://github.com/tommo395/material-database"
+      username: "thomasjbell",
+      repoName: "equalab-materials",
+      url: "https://github.com/thomasjbell/equalab-materials"
     },
     
     // App information
     app: {
-      name: "Materials Database",
+      name: "EquaLab Materials",
       version: "1.0.0"
     }
   };
