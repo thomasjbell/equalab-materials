@@ -154,7 +154,7 @@ const AddMaterial = ({ materials }) => {
           After submitting, you can copy the code and contribute it via a GitHub pull request.
         </p>
         <a 
-          href={config?.github?.url || "https://github.com/username/materials-database"} 
+          href={config?.github?.url || "https://github.com/thomasjbell/equalab-materials"} 
           className="text-accent hover:underline" 
           target="_blank" 
           rel="noopener noreferrer"
