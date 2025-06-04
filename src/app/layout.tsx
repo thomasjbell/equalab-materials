@@ -1,6 +1,9 @@
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { Inter } from "next/font/google";
+
+const lato = Inter({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata = {
   title: "EquaLab Materials",
@@ -17,7 +20,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="favicon.svg" type="image/svg+xml" />
       </head>
-      <body>
+      <body className={lato.className}>
         <Navbar />
         {children}
         <Footer />

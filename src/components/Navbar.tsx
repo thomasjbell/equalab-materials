@@ -26,9 +26,9 @@ export default function Navbar() {
                     <span className="bg-gradient-to-r from-cyan-700 to-cyan-600 text-transparent bg-clip-text">
                       EquaLab
                     </span>
-                    &nbsp;<i className="text-xl">Materials</i>
+               
                   </h1>
-                  <p className="text-xs text-gray-500 -mt-1">Database</p>
+                  <p className="text-xs text-gray-500 -mt-1">Materials</p>
                 </div>
               </div>
             </div>
@@ -40,7 +40,7 @@ export default function Navbar() {
               href="/"
               className="flex items-center space-x-1 text-cyan-900 hover:text-cyan-600 transition-colors font-medium"
             >
-              <span>Database</span>
+              <span>Materials</span>
             </a>
             <a
               href="/add"
