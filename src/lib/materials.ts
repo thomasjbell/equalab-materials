@@ -6,9 +6,14 @@ export const loadMaterials = async (): Promise<Material[]> => {
     const data = await response.json();
     
     // Add IDs to materials if they don't already have them
-    const materialsWithIds: Material[] = data.materials.map((material: any, index: number) => ({
-      ...material,
-      id: material.id || `${index + 1}`
+    const materialsWithIds: Material[] = data.materials.map((material: Partial<Material>, index: number) => ({
+      id: material.id || `${index + 1}`,
+      name: material.name || '',
+      shortName: material.shortName || '',
+      type: material.type || '',
+      designation: material.designation || '',
+      properties: material.properties || {},
+      ...material
     }));
 
     return materialsWithIds;
