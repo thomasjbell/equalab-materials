@@ -4,12 +4,40 @@ import { useState, useEffect } from 'react';
 import { Material } from '@/types/material';
 import { loadMaterials, getMaterialTypes } from '@/lib/materials';
 
+interface FormData {
+  name: string;
+  shortName: string;
+  type: string;
+  customType: string;
+  designation: string;
+  properties: {
+    hardness: string;
+    density: string;
+    youngsModulus: string;
+    uts: string;
+    frictionCoef: string;
+    waterAbsorption: string;
+    electricalResistance: string;
+    resistivity: string;
+    flexuralMod: string;
+    impactCharpy: string;
+    notchedImpactCharpy: string;
+    meltingTemp: string;
+    specificHeatCap: string;
+    thermalConductivity: string;
+    costPerKg: string;
+    recyclability: string;
+    biocompatible: string;
+    application: string;
+  };
+}
+
 export default function AddMaterialPage() {
   const [materials, setMaterials] = useState<Material[]>([]);
   const [loading, setLoading] = useState(true);
   
-  // Form state
-  const [formData, setFormData] = useState({
+  // Form state with proper typing
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     shortName: '',
     type: '',
@@ -53,15 +81,19 @@ export default function AddMaterialPage() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
+    
     if (name.includes('.')) {
       const [parent, child] = name.split('.');
-      setFormData(prev => ({
-        ...prev,
-        [parent]: {
-          ...prev[parent as keyof typeof prev],
-          [child]: value
-        }
-      }));
+      
+      if (parent === 'properties') {
+        setFormData(prev => ({
+          ...prev,
+          properties: {
+            ...prev.properties,
+            [child]: value
+          }
+        }));
+      }
     } else {
       setFormData(prev => ({
         ...prev,
