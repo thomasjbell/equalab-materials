@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Menu, X, Atom } from "lucide-react";
+import LittleLogo from "./ui/LittleLogo";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,12 +19,12 @@ export default function Navbar() {
           <a href="/">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 drop-shadow rounded-lg flex items-center justify-center">
-                  <Atom className="w-5 h-5 text-white" />
-                </div>
+            
+                  <LittleLogo className="w-10 h-10" />
+               
                 <div>
                   <h1 className="text-xl font-bold text-gray-900">
-                    <span className="bg-gradient-to-r from-cyan-700 to-cyan-600 text-transparent bg-clip-text">
+                    <span className="bg-gradient-to-r from-cyan-800 to-cyan-600 text-transparent bg-clip-text">
                       EquaLab
                     </span>
                
