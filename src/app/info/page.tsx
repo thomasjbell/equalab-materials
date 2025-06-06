@@ -1,17 +1,26 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function InfoPage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-50 to-cyan-50">
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-4 py-8">
         <header className="mb-8">
-          <h1 className="text-3xl font-bold tracking-tight text-slate-900">
-            About Materials Database
+          <h1 className="text-4xl font-bold text-cyan-950 text-center mb-4">
+            About EquaLab Materials
           </h1>
-          <p className="mt-2 text-sm text-slate-600">
-            Learn more about our comprehensive materials database and how to use
-            it.
-          </p>
+       <motion.div
+            className="bg-gradient-to-r from-cyan-800 to-cyan-500 h-0.5 w-1/3 md:w-1/3 mx-auto rounded-full"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            transition={{
+              duration: 0.6, // Was 0.8
+              ease: "easeInOut",
+              delay: 0.1 // Was 0.2
+            }}
+            viewport={{ once: true }}
+          />
         </header>
 
         <div className="space-y-8">
@@ -20,7 +29,7 @@ export default function InfoPage() {
               Project Overview
             </h2>
             <p className="mb-4">
-              The Materials Database is a comprehensive tool for scientists,
+              EquaLab Materials is a comprehensive tool for scientists,
               engineers, and researchers to access, compare, and contribute
               information about various materials and their properties. This
               application allows users to:

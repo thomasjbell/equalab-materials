@@ -1,7 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X, Atom } from "lucide-react";
+import {
+  Menu,
+  X,
+  Atom,
+  BookOpen,
+  PlusSquare,
+  ArrowRightLeft,
+  Info,
+} from "lucide-react";
 import LittleLogo from "./ui/LittleLogo";
 
 export default function Navbar() {
@@ -19,15 +27,13 @@ export default function Navbar() {
           <a href="/">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">
-            
-                  <LittleLogo className="w-10 h-10" />
-               
+                <LittleLogo className="w-10 h-10" />
+
                 <div>
                   <h1 className="text-xl font-bold text-gray-900">
                     <span className="bg-gradient-to-r from-cyan-800 to-cyan-600 text-transparent bg-clip-text">
                       EquaLab
                     </span>
-               
                   </h1>
                   <p className="text-xs text-gray-500 -mt-1">Materials</p>
                 </div>
@@ -41,24 +47,28 @@ export default function Navbar() {
               href="/"
               className="flex items-center space-x-1 text-cyan-900 hover:text-cyan-600 transition-colors font-medium"
             >
-              <span>Materials</span>
+              <BookOpen className="w-4 h-4" />
+              <span>Library</span>
             </a>
             <a
               href="/add"
               className="flex items-center space-x-1 text-cyan-900 hover:text-cyan-600 transition-colors font-medium"
             >
+              <PlusSquare className="w-4 h-4" />
               <span>Add Material</span>
             </a>
             <a
               href="/compare"
               className="flex items-center space-x-1 text-cyan-900 hover:text-cyan-600 transition-colors font-medium"
             >
+              <ArrowRightLeft className="w-4 h-4" />
               <span>Compare</span>
             </a>
             <a
               href="/info"
               className="flex items-center space-x-1 text-cyan-900 hover:text-cyan-600 transition-colors font-medium"
-            >
+            > 
+              <Info className="w-4 h-4" />
               <span>Info</span>
             </a>
           </div>
@@ -94,7 +104,7 @@ export default function Navbar() {
               >
                 <span className="font-medium">Add Material</span>
               </a>
-             <a 
+              <a
                 href="/compare"
                 className="flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors"
               >

@@ -6,6 +6,7 @@ import SearchBar from "./SearchBar";
 import SortDropdown from "./SortDropdown";
 import { loadMaterials } from "@/lib/materials";
 import { Material } from "@/types/material";
+import { motion } from "framer-motion";
 
 export default function MaterialGrid() {
   const [materials, setMaterials] = useState<Material[]>([]);
@@ -73,12 +74,20 @@ export default function MaterialGrid() {
     <div className="space-y-6">
       {/* Header */}
       <div className="text-center">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Materials Database
+        <h1 className="text-4xl font-bold text-cyan-950 mb-4">
+          Material Library
         </h1>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Explore our comprehensive database of materials, compare properties, and find the perfect material for your project.
-        </p>
+        <motion.div
+            className="bg-gradient-to-r from-cyan-800 to-cyan-500 h-0.5 w-1/3 md:w-1/4 mx-auto rounded-full"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            transition={{
+              duration: 0.6, // Was 0.8
+              ease: "easeInOut",
+              delay: 0.1 // Was 0.2
+            }}
+            viewport={{ once: true }}
+          />
       </div>
 
       {/* Controls */}

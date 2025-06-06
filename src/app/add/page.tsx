@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Material } from '@/types/material';
 import { loadMaterials, getMaterialTypes } from '@/lib/materials';
+import { motion } from 'framer-motion';
 
 interface FormData {
   name: string;
@@ -151,10 +152,18 @@ export default function AddMaterialPage() {
     <main className="min-h-screen bg-gradient-to-br from-slate-50 to-cyan-50">
       <div className="max-w-4xl mx-auto px-4 py-8">
         <header className="mb-8">
-          <h1 className="text-3xl font-bold tracking-tight text-slate-900">Add New Material</h1>
-          <p className="mt-2 text-sm text-slate-600">
-            Fill out this form to generate the JSON code needed to add a new material to the database.
-          </p>
+          <h1 className="text-4xl font-bold text-cyan-950 text-center mb-4">Add Material</h1>
+          <motion.div
+            className="bg-gradient-to-r from-cyan-800 to-cyan-500 h-0.5 w-1/3 md:w-1/4 mx-auto rounded-full"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            transition={{
+              duration: 0.6, // Was 0.8
+              ease: "easeInOut",
+              delay: 0.1 // Was 0.2
+            }}
+            viewport={{ once: true }}
+          />
         </header>
 
         <form onSubmit={handleSubmit} className="space-y-8 bg-white p-8 shadow-xl rounded-lg">

@@ -5,6 +5,7 @@ import { Material } from "@/types/material";
 import { loadMaterials } from "@/lib/materials";
 import { formatPropertyLabel } from "@/lib/utils";
 import SearchBar from "@/components/SearchBar";
+import { motion } from "framer-motion";
 
 export default function ComparePage() {
   const [materials, setMaterials] = useState<Material[]>([]);
@@ -81,10 +82,20 @@ export default function ComparePage() {
     <main className="min-h-screen bg-gradient-to-br from-slate-50 to-cyan-50">
       <div className="max-w-7xl mx-auto px-4 py-8">
         <header className="mb-8">
-          <h1 className="text-3xl font-bold tracking-tight text-slate-900">Compare Materials</h1>
-          <p className="mt-2 text-sm text-slate-600">
-            Select up to 3 materials to compare their properties side by side.
-          </p>
+          <h1 className="text-4xl font-bold text-cyan-950 text-center mb-4">Compare Materials</h1>
+          <motion.div
+            className="bg-gradient-to-r from-cyan-800 to-cyan-500 h-0.5 w-1/3 md:w-1/4 mx-auto rounded-full"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            transition={{
+              duration: 0.6, // Was 0.8
+              ease: "easeInOut",
+              delay: 0.1 // Was 0.2
+            }}
+            viewport={{ once: true }}
+          />
+         
+           
         </header>
 
         {/* Material Selection */}
