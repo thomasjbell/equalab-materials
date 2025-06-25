@@ -27,8 +27,8 @@ export default function MaterialTypePage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-cyan-50">
-        <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="min-h-screen bg-gradient-to-br from-cyan-50 to-blue-100 dark:from-gray-900 dark:to-gray-800">
+        <div className="container mx-auto px-4 py-8">
           <div className="flex justify-center items-center min-h-[400px]">
             <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-cyan-500"></div>
           </div>
@@ -38,19 +38,19 @@ export default function MaterialTypePage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-50 to-cyan-50">
-      <div className="max-w-7xl mx-auto px-4 py-8">
+    <main className="min-h-screen bg-gradient-to-br from-cyan-50 to-blue-100 dark:from-gray-900 dark:to-gray-800">
+      <div className="container mx-auto px-4 py-8">
         <div className="mb-6">
           <a
             href="/"
-            className="inline-flex items-center text-slate-600 hover:text-cyan-600 transition-colors mb-4"
+            className="inline-flex items-center text-slate-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors mb-4"
           >
             <ArrowLeft className="w-5 h-5 mr-1" />
             Back to All Materials
           </a>
-          <h1 className="text-3xl font-bold tracking-tight text-slate-900">
+          <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
             {typeId} Materials
-            <span className="ml-2 text-lg text-slate-600">({materialsOfType.length})</span>
+            <span className="ml-2 text-lg text-slate-600 dark:text-gray-400">({materialsOfType.length})</span>
           </h1>
         </div>
 
@@ -60,8 +60,8 @@ export default function MaterialTypePage() {
               <MaterialCard key={material.id} material={material} />
             ))
           ) : (
-            <div className="bg-white rounded-lg shadow-md p-8 text-center">
-              <p className="text-slate-500 text-lg">No materials found for this type.</p>
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 text-center">
+              <p className="text-slate-500 dark:text-gray-400 text-lg">No materials found for this type.</p>
             </div>
           )}
         </div>

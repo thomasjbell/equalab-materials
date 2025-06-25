@@ -27,7 +27,7 @@ export default function MaterialGrid() {
   const filteredAndSortedMaterials = useMemo(() => {
     let filtered = materials;
 
-    // Apply search filter (simple string matching)
+    // Apply search filter
     if (searchTerm.trim()) {
       const searchLower = searchTerm.toLowerCase();
       filtered = materials.filter(material => 
@@ -73,21 +73,27 @@ export default function MaterialGrid() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-cyan-950 mb-4">
+      <div>
+        <h1 className="text-5xl font-bold text-cyan-950 text-center mb-4 dark:text-cyan-50">
           Material Library
         </h1>
+        <p className="text-center text-gray-600 dark:text-gray-400 mb-2 text-lg">
+          Comprehensive database of engineering materials and their properties
+        </p>
+        <p className="text-center text-gray-500 dark:text-gray-500 mb-6 text-sm">
+          Search by material name, type, or property values
+        </p>
         <motion.div
-            className="bg-gradient-to-r from-cyan-800 to-cyan-500 h-0.5 w-1/3 md:w-1/4 mx-auto rounded-full"
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            transition={{
-              duration: 0.6, // Was 0.8
-              ease: "easeInOut",
-              delay: 0.1 // Was 0.2
-            }}
-            viewport={{ once: true }}
-          />
+          className="bg-gradient-to-r from-cyan-800 to-cyan-500 h-0.5 w-1/3 md:w-1/4 mx-auto rounded-full"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{
+            duration: 0.6,
+            ease: "easeInOut",
+            delay: 0.1,
+          }}
+          viewport={{ once: true }}
+        />
       </div>
 
       {/* Controls */}
@@ -110,8 +116,8 @@ export default function MaterialGrid() {
           <button
             className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-medium ${
               selectedType === null
-                ? "bg-cyan-600 text-white"
-                : "bg-slate-200 text-cyan-900 hover:bg-gray-300"
+                ? "bg-cyan-600 text-cyan-50 hover:bg-cyan-700 dark:bg-cyan-700 dark:hover:bg-cyan-600"
+                : "bg-slate-200 text-cyan-900 hover:bg-gray-300 dark:bg-gray-700 dark:text-cyan-50 dark:hover:bg-gray-600"
             }`}
             onClick={() => setSelectedType(null)}
           >
@@ -122,8 +128,8 @@ export default function MaterialGrid() {
               key={type}
               className={`inline-flex items-center rounded-full px-3 py-1 ml-2 text-sm font-medium ${
                 selectedType === type
-                  ? "bg-cyan-600 text-white"
-                  : "bg-slate-200 text-cyan-900 hover:bg-gray-300"
+                  ? "bg-cyan-600 text-cyan-50 hover:bg-cyan-700 dark:bg-cyan-700 dark:hover:bg-cyan-600"
+                  : "bg-slate-200 text-cyan-900 hover:bg-gray-300 dark:bg-gray-700 dark:text-cyan-50 dark:hover:bg-gray-600"
               }`}
               onClick={() => setSelectedType(type)}
             >
@@ -134,7 +140,7 @@ export default function MaterialGrid() {
       </div>
 
       {/* Results Count */}
-      <div className="text-sm text-gray-600">
+      <div className="text-sm text-gray-600 dark:text-gray-400">
         {filteredAndSortedMaterials.length} material
         {filteredAndSortedMaterials.length !== 1 ? "s" : ""} found
         {selectedType && ` in category "${selectedType}"`}
@@ -150,14 +156,14 @@ export default function MaterialGrid() {
 
       {filteredAndSortedMaterials.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-gray-500 text-lg">
+          <p className="text-gray-500 dark:text-gray-400 text-lg">
             No materials found matching your search
             {selectedType && ` in category "${selectedType}"`}.
           </p>
           {searchTerm && (
             <button
               onClick={() => setSearchTerm("")}
-              className="mt-2 text-cyan-600 hover:text-cyan-700 underline"
+              className="mt-2 text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300 underline"
             >
               Clear search
             </button>

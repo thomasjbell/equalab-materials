@@ -14,11 +14,7 @@ export interface MaterialProperties {
   uts?: string;
   frictionCoef?: string;
   waterAbsorption?: string;
-  electricalResistance?: string;
-  resistivity?: string;
   flexuralMod?: string;
-  impactCharpy?: string;
-  notchedImpactCharpy?: string;
   meltingTemp?: string;
   specificHeatCap?: string;
   thermalConductivity?: string;
